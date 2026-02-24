@@ -1,0 +1,33 @@
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Python virtual environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# UV
+.uv/
+
+# Garmin auth tokens (generated at runtime)
+.garminconnect
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

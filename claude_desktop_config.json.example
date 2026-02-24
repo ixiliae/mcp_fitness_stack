@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "fitness-coach": {
+      "command": "<REPO_PATH>/mymcpserver/.venv/bin/python3",
+      "args": [
+        "<REPO_PATH>/mymcpserver/server.py"
+      ],
+      "env": {
+        "STRAVA_ACCESS_TOKEN": "<your-strava-access-token>",
+        "GARMIN_EMAIL": "<your-garmin-email>",
+        "GARMIN_PASSWORD": "<your-garmin-password>"
+      }
+    },
+    "garmin": {
+      "command": "<path-to-uvx>",
+      "args": [
+        "--python",
+        "3.12",
+        "--from",
+        "git+https://github.com/Taxuspt/garmin_mcp",
+        "garmin-mcp"
+      ]
+    },
+    "hevy": {
+      "command": "<REPO_PATH>/hevy_mcp/.venv/bin/python3",
+      "args": [
+        "<REPO_PATH>/hevy_mcp/server.py"
+      ],
+      "env": {
+        "HEVY_API_KEY": "<your-hevy-api-key>"
+      }
+    }
+  },
+  "preferences": {
+    "menuBarEnabled": false,
+    "legacyQuickEntryEnabled": true,
+    "coworkScheduledTasksEnabled": false,
+    "sidebarMode": "code"
+  }
+}
