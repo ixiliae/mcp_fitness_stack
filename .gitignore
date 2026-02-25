@@ -3,6 +3,13 @@
 .env.local
 .env.*.local
 
+# MCP config with live API keys
+.mcp.json
+
+# Claude Desktop config with live credentials
+claude_desktop_config.json
+!claude_desktop_config.json.example
+
 # Python virtual environments
 .venv/
 venv/

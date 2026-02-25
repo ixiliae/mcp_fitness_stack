@@ -6,7 +6,7 @@ A collection of [Model Context Protocol](https://modelcontextprotocol.io) server
 
 | Server | Source | Tools | Description |
 |--------|--------|-------|-------------|
-| `fitness-coach` | `mymcpserver/` | 3 | Combined Strava + Garmin coach |
+| `fitness-coach` | `stravamcpserver/` | 3 | Combined Strava + Garmin coach |
 | `garmin` | External (uvx) | 95+ | Full Garmin Connect integration |
 | `hevy` | `hevy_mcp/` | 18 | Hevy strength training log |
 
@@ -22,12 +22,12 @@ A collection of [Model Context Protocol](https://modelcontextprotocol.io) server
 
 ---
 
-### 1. fitness-coach (mymcpserver)
+### 1. fitness-coach (stravamcpserver)
 
 Combines Strava activities and Garmin health stats in a single MCP server.
 
 ```bash
-cd mymcpserver
+cd stravamcpserver
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
