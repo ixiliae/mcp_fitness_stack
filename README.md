@@ -1,6 +1,7 @@
 # MCP Fitness Stack
 
 A collection of [Model Context Protocol](https://modelcontextprotocol.io) servers that connect Claude Desktop to fitness tracking platforms.
+Fully AI Slop
 
 ## Servers
 
