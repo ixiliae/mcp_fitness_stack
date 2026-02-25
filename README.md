@@ -5,11 +5,11 @@ Fully AI Slop
 
 ## Servers
 
-| Server | Source | Tools | Description |
-|--------|--------|-------|-------------|
-| `fitness-coach` | `stravamcpserver/` | 3 | Combined Strava + Garmin coach |
-| `garmin` | External (uvx) | 95+ | Full Garmin Connect integration |
-| `hevy` | `hevy_mcp/` | 18 | Hevy strength training log |
+| Server | Source | Description |
+|--------|--------|-------------|
+| `fitness-coach` | `stravamcpserver/` | Strava activities and stats |
+| `garmin` | External (uvx) | Full Garmin Connect integration |
+| `hevy` | External (npx) | Hevy strength training log |
 
 ---
 
@@ -19,13 +19,14 @@ Fully AI Slop
 
 - Python 3.11+
 - [uv](https://docs.astral.sh/uv/) (for the `garmin` server)
+- Node.js + npx (for the `hevy` server)
 - Claude Desktop
 
 ---
 
 ### 1. fitness-coach (stravamcpserver)
 
-Combines Strava activities and Garmin health stats in a single MCP server.
+Pulls Strava activities, athlete stats, and time-series streams via the Strava API.
 
 ```bash
 cd stravamcpserver
@@ -64,23 +65,9 @@ which uvx
 
 ---
 
-### 3. hevy
+### 3. hevy (external, via npx)
 
-Requires a [Hevy PRO](https://hevy.com) subscription.
-
-```bash
-cd hevy_mcp
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-Copy the env template:
-
-```bash
-cp .env.example .env
-# Add your HEVY_API_KEY
-```
+Installed on-demand from npm — no local setup required. Requires a [Hevy PRO](https://hevy.com) subscription and an API key from the Hevy app settings.
 
 ---
 
@@ -105,8 +92,6 @@ Replace all `<placeholders>` in the example:
 | `<REPO_PATH>` | Absolute path to this repo (e.g. `/home/user/mcp-fitness-stack`) |
 | `<path-to-uvx>` | Output of `which uvx` |
 | `<your-strava-access-token>` | From `strava_auth.py` |
-| `<your-garmin-email>` | Your Garmin Connect email |
-| `<your-garmin-password>` | Your Garmin Connect password |
 | `<your-hevy-api-key>` | From Hevy app settings |
 
 ---
